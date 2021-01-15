@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": "jBWMVGjm50l6LGwexD841q",
+      "username": "jeguemaster",
+      "shoes": [],
+      "pets": ["Ft0q2hEc4tQA8MnbEVJa0", "s84q51cq" ]
+    },
+    {
+      "id": "jBWMVGjm50l6LGwepDoty",
+      "username": "frontendmaster",
+      "shoes": [],
+      "pets": ["sq884cqe", "as54d84d"]
+    }
+  ],
+  "pets": [
+    {
+      "id": "as54d84d",
+      "createdAt": "15548936",
+      "name": "Penico",
+      "type": "dog",
+      "user": "jBWMVGjm50l6LGwepDoty"
+    },
+    {
+      "id": "sq884cqe",
+      "createdAt": "15587891",
+      "name": "Quenico",
+      "type": "cat",
+      "user": "jBWMVGjm50l6LGwepDoty"
+    },
+    {
+      "id": "s84q51cq",
+      "createdAt": "15587636",
+      "name": "Quenis",
+      "type": "cat",
+      "user": "jBWMVGjm50l6LGwexD841q"
+    },
+    {
+      "id": "Ft0q2hEc4tQA8MnbEVJa0",
+      "createdAt": 1610546894778,
+      "name": "Zega",
+      "type": "cat",
+      "user": "jBWMVGjm50l6LGwexD841q"
+    }
+  ]
+}
