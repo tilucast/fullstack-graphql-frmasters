@@ -27,6 +27,7 @@ const typeDefs = gql`
     name: String!
     type: String!
     user: User
+    img: String
   }
 
   interface Shoes {
@@ -49,8 +50,6 @@ const typeDefs = gql`
     hasGrip: Boolean!
   }
 
-
-
   input PetInput {
     id: ID
     type: String
@@ -69,10 +68,11 @@ const typeDefs = gql`
   input NewPetInput {
     name: String!
     type: String!
+    img: String!
   }
 
   input UserInput {
-    id: ID!
+    id: ID
   }
 
   type Query {

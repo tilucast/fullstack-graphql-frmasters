@@ -1,33 +1,86 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import gql from 'graphql-tag'
-import PetBox from '../components/PetBox'
+import PetsList from '../components/PetsList'
 import NewPet from '../components/NewPet'
 import { useQuery, useMutation } from '@apollo/react-hooks'
 import Loader from '../components/Loader'
 
+/* 
+  age client => user{
+      id
+      age @client
+    }
+*/
+
+const PETS_FIELDS = gql`
+  fragment PetsFields on Pet{
+    name
+    id
+    type
+    img
+    vaccinated @client
+  }
+`
+
+const PETS_QUERY = gql`
+  query petsQuery{
+      pets{
+        ...PetsFields
+      }
+  }
+  ${PETS_FIELDS}
+`
+
+const CREATE_A_PET = gql`
+  mutation createAPet($input: NewPetInput!){
+    newPet(input: $input){
+      ...PetsFields
+    }
+  }
+  ${PETS_FIELDS}
+`
+
 export default function Pets () {
   const [modal, setModal] = useState(false)
+  const {data, loading, error} = useQuery(PETS_QUERY)
+
+  const [createAPet, createdPet] = useMutation(CREATE_A_PET, {
+    update(cache, {data: {newPet}}){
+      const {pets} = cache.readQuery({query: PETS_QUERY})
+      cache.writeQuery({
+        query: PETS_QUERY,
+        data: {pets: [newPet, ...pets]}
+      })
+    }
+  })
   
   const onSubmit = input => {
     setModal(false)
+    createAPet({
+      variables: {input},
+      optimisticResponse: {
+        __typename: "Mutation",
+        newPet: {
+          __typename: "Pet",
+          id: "placeholderstringherecuh",
+          type: input.type,
+          name: input.name,
+          img: input.img
+        }
+      }
+    })
   }
 
-  const petsList = pets.data.pets.map(pet => (
-    <div className="col-xs-12 col-md-4 col" key={pet.id}>
-      <div className="box">
-        <PetBox pet={pet} />
-      </div>
-    </div>
-  ))
+  if(loading){
+    return <Loader />
+  }
+
+  if(error || createdPet.error){
+    return <p>{error || createdPet.error}</p>
+  }
   
   if (modal) {
-    return (
-      <div className="row center-xs">
-        <div className="col-xs-8">
-          <NewPet onSubmit={onSubmit} onCancel={() => setModal(false)}/>
-        </div>
-      </div>
-    )
+    return <NewPet onSubmit={onSubmit} onCancel={() => setModal(false)}/>
   }
 
   return (
@@ -44,9 +97,7 @@ export default function Pets () {
         </div>
       </section>
       <section>
-        <div className="row">
-          {petsList}
-        </div>
+          <PetsList pets={data.pets}/>
       </section>
     </div>
   )

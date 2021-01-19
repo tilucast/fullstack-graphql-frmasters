@@ -4,13 +4,19 @@
       "id": "jBWMVGjm50l6LGwexD841q",
       "username": "jeguemaster",
       "shoes": [],
-      "pets": ["Ft0q2hEc4tQA8MnbEVJa0", "s84q51cq" ]
+      "pets": [
+        "Ft0q2hEc4tQA8MnbEVJa0",
+        "s84q51cq"
+      ]
     },
     {
       "id": "jBWMVGjm50l6LGwepDoty",
       "username": "frontendmaster",
       "shoes": [],
-      "pets": ["sq884cqe", "as54d84d"]
+      "pets": [
+        "sq884cqe",
+        "as54d84d"
+      ]
     }
   ],
   "pets": [
@@ -19,28 +25,60 @@
       "createdAt": "15548936",
       "name": "Penico",
       "type": "dog",
-      "user": "jBWMVGjm50l6LGwepDoty"
+      "user": "jBWMVGjm50l6LGwepDoty",
+      "img": "https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
     },
     {
       "id": "sq884cqe",
       "createdAt": "15587891",
       "name": "Quenico",
       "type": "cat",
-      "user": "jBWMVGjm50l6LGwepDoty"
+      "user": "jBWMVGjm50l6LGwepDoty",
+      "img": "https://images.pexels.com/photos/1741205/pexels-photo-1741205.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
     },
     {
       "id": "s84q51cq",
       "createdAt": "15587636",
       "name": "Quenis",
       "type": "cat",
-      "user": "jBWMVGjm50l6LGwexD841q"
+      "user": "jBWMVGjm50l6LGwexD841q",
+      "img": "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
     },
     {
       "id": "Ft0q2hEc4tQA8MnbEVJa0",
       "createdAt": 1610546894778,
       "name": "Zega",
       "type": "cat",
-      "user": "jBWMVGjm50l6LGwexD841q"
+      "user": "jBWMVGjm50l6LGwexD841q",
+      "img": "https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+    },
+    {
+      "id": "sIBkXo8pDrU89o3hG-a3j",
+      "createdAt": 1610981969824,
+      "name": "Pinho",
+      "type": "cat",
+      "img": "https://i.kym-cdn.com/entries/icons/mobile/000/026/027/halfiecat.jpg"
+    },
+    {
+      "id": "AH4cgYtyfDkhLLU2f2y43",
+      "createdAt": 1610989258419,
+      "name": "PESTELENCIA",
+      "type": "DOG",
+      "img": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/golden-retriever-royalty-free-image-506756303-1560962726.jpg?crop=0.672xw:1.00xh;0.166xw,0&resize=640:*"
+    },
+    {
+      "id": "9crytSzn0eWEO7VyymLXm",
+      "createdAt": 1611058671513,
+      "name": "OH LONG QUENIS",
+      "type": "CAT",
+      "img": "https://i.ytimg.com/vi/kkwiQmGWK4c/maxresdefault.jpg"
+    },
+    {
+      "id": "SV2WaXVAAfLp5zWS_nZBD",
+      "createdAt": 1611059042278,
+      "name": "OH LONG QUENIS COPY",
+      "type": "CAT",
+      "img": "https://i.ytimg.com/vi/kkwiQmGWK4c/maxresdefault.jpg"
     }
   ]
 }
